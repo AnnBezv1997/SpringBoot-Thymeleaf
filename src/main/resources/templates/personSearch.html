@@ -1,0 +1,36 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8" />
+    <title> Person Search</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/style.css}"/>
+</head>
+<body>
+<h1>Person Search:</h1>
+<form action="#"
+      th:action="@{/personSearch}"
+      th:object="${personForm}" method="POST">
+    <table>
+        <tr>
+            <td>First Name:</td>
+            <td><input type="text" th:field="*{firstName}" /></td>
+            <td th:if="${#fields.hasErrors('firstName')}" th:errors="*{firstName}"> error</td>
+        </tr>
+        <tr>
+            <td>Last Name:</td>
+            <td><input type="text" th:field="*{lastName}" /></td>
+            <td th:if="${#fields.hasErrors('lastName')}" th:errors="*{lastName}"> error</td>
+        </tr>
+        <tr>
+            <td><input type="submit" value="Search" /></td>
+        </tr>
+    </table>
+</form>
+
+
+ <br/>
+  <a th:href="@{/index}"> Home </a>
+  <br/>
+
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+   <head>
+      <meta charset="UTF-8" />
+      <title>Person </title>
+      <link rel="stylesheet" type="text/css" th:href="@{/css/style.css}"/>
+   </head>
+   <body>
+      <h1>Person </h1>
+      <br/><br/>
+            <div>
+               <table border="1">
+                  <tr>
+                     <th>First Name</th>
+                     <th>Second Name</th>
+                     <th>Last Name</th>
+                     <th>Age</th>
+                     <th>Salary</th>
+                     <th>Place of work </th>
+                     <th>Email </th>
+
+                  </tr>
+                     <td th:utext="${person.firstName}">...</td>
+                     <td th:utext="${person.secondName}">...</td>
+                     <td th:utext="${person.lastName}">...</td>
+                     <td th:utext="${person.age}">...</td>
+                     <td th:utext="${person.salary}">...</td>
+                     <td th:utext="${person.workPlace}">...</td>
+                     <td th:utext="${person.email}">...</td>
+                  </tr>
+               </table>
+            </div>
+       <br/>
+       <td th:utext="${person.browser}">...</td>
+       <br/>
+       <td th:utext="${person.date}">...</td>
+       <br/>
+       <br/>
+       <a th:href="@{/sendEmail}"> Send Email</a>
+       <br/>
+       <br/>
+       <a th:href="@{/index}"> Home</a>
+       <br/>
+       <br/>
+       <a th:href="@{/personSearch}"> Back</a>
+       <br/>
+
+   </body>
+
+</html>

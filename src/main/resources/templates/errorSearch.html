@@ -1,0 +1,18 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8" />
+    <title>ERROR</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/style.css}"/>
+</head>
+<body>
+<h1>ERROR SEARCH</h1>
+<h2 th:utext="${searchMessage}">..!..</h2>
+
+<a th:href="@{/addPerson}"> Add Person</a>
+<br/>
+<a th:href="@{/index}"> Home</a>
+<a th:href="@{/personSearch}"> Search person</a>
+</body>
+
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE HTML>
+       <html xmlns:th="http://www.thymeleaf.org">
+          <head>
+             <meta charset="UTF-8" />
+             <title>Send email </title>
+             <link rel="stylesheet" type="text/css" th:href="@{/css/style.css}"/>
+          </head>
+          <body>
+             <h1>Send Email </h1>
+             <br/><br/>
+
+              <form th:action="@{/sendEmail}"
+                    th:object="${emailForm}" method="POST">
+                  Write a message:
+                  <br/>
+                  <input type="text" th:field="*{textEmail}" />
+                   <br/>
+                  <input type="submit" value="Send" />
+              </form>
+
+              <br/>
+
+              <!-- Сообщение добавлено или нет -->
+
+              <div th:if="${errorMessage}" th:utext="${errorMessage}"
+                   style="color:red;font-style:italic;">
+                  ...
+              </div>
+              <div th:if="${doneMessage}" th:utext="${doneMessage}"
+                   style="color:red;font-style:italic;">
+              </div>
+               <br/>
+                <a th:href="@{/index}"> Home</a>
+                <br/>
+          </body>
+
+       </html>
